@@ -36,7 +36,7 @@ RUN sudo ldconfig
 RUN git clone https://github.com/lorenzo1300/openabe.git /project
 
 #Move on the library directory
-WORKDIR /project/OpenABE
+WORKDIR /project/openabe
 
 #Compiling of the library
 RUN . ./env && make
@@ -44,8 +44,9 @@ RUN . ./env && make
 #Running test
 RUN make tests
 
-#Move to bench_scripts directory
+#Move to bench_scripts directory and compile C++ benchmark script
 WORKDIR /project/bench_scripts
- 
+RUN chmod +x compile_bench.sh
+
 #Compile C++ script at runtime
-CMD ["bash"]
+CMD ["./compile_bench.sh"]
