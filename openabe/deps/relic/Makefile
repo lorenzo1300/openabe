@@ -19,7 +19,7 @@ EC_TMP=$(shell mktemp -d tmp$(EC_LABEL)-XXXX)
 EC_HDR_PREFIX=_$(EC_LABEL)
 
 # Options: BN254 or BN382 (ARITH=x64-asm-382)
-BN_CURVE=254
+BN_CURVE=382
 EC_CURVE=256
 
 all: package relic-$(VERSION)/.built

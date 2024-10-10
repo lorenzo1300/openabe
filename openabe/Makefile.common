@@ -3,7 +3,7 @@
 CC ?= g++
 CXX ?= g++
 
-LDLIBS ?= -lgtest -lpthread
+# LDLIBS ?= -lgtest -lpthread
 
 DEPS_INSTALL_ZROOT = $(ZROOT)/deps/root
 OABE_LIB_ROOT = $(ZROOT)/root/lib
@@ -42,7 +42,7 @@ else
 endif
 
 # Set shared lib extension for each OS
-DEPS_PACKAGES = $(if $(USE_DEPS),$(USE_DEPS),relic openssl gtest)
+DEPS_PACKAGES = $(if $(USE_DEPS),$(USE_DEPS),relic openssl)
 ADD_CFLAGS :=
 OS_CXXFLAGS :=
 WITH_BP := 
