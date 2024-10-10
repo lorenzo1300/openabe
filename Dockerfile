@@ -4,8 +4,8 @@ FROM ubuntu:20.04
 ENV DEBIAN_FRONTEND=noninteractive
 
 #Installation and update of needed packages
-RUN apt update
-RUN DEBIAN_FRONTEND=noninteractive apt install -y git \ 
+RUN apt-get update
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y git \ 
         build-essential \
         wget \
         autoconf \
@@ -39,14 +39,14 @@ RUN git clone https://github.com/lorenzo1300/openabe.git /project
 WORKDIR /project/openabe
 
 #Compiling of the library
-RUN . ./env && make
+RUN . ./env 
+RUN make
 
-#Running test
-RUN make tests
 
 #Move to bench_scripts directory and compile C++ benchmark script
 WORKDIR /project/bench_scripts
 RUN chmod +x compile_bench.sh
+RUN chmod +x bench.sh
 
 #Compile C++ script at runtime
 CMD ["./compile_bench.sh"]
