@@ -52,7 +52,7 @@ do
 		echo "policy = $policy"
 		echo "user's attributes = $user_attr"
 
-		IFS=' ' read -r setup_time keygen_time encrypt_time decrypt_time <<< $(./my_bench_low_BN382 "$plaintext" "$policy" "$user_attr")
+		IFS=' ' read -r setup_time keygen_time encrypt_time decrypt_time <<< $(./benchBN382 "$plaintext" "$policy" "$user_attr")
 
 		echo "$n,$k,$setup_time,$keygen_time,$encrypt_time,$decrypt_time" >> "$OUTPUT_FILE"
 	done
