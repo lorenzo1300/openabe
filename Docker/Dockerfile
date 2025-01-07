@@ -4,31 +4,31 @@ FROM ubuntu:20.04
 ENV DEBIAN_FRONTEND=noninteractive
 
 #Installation and update of needed packages
-RUN apt-get update
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y git 
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y build-essential 
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y wget 
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y autoconf 
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y m4 
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y libtool 
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y g++ 
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y cmake 
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y libgmp-dev 
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y libssl-dev 
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y bison 
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y flex 
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y unzip 
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y libglib2.0-dev 
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y doxygen 
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y python3-setuptools 
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y python3-dev 
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y python3-pip 
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y nodejs 
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y npm 
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y libboost-all-dev=1.71.0.0ubuntu2 
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y libgtest-dev 
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y nano 
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y sudo
+RUN apt-get update --fix-missing
+RUN apt install -y git 
+RUN apt install -y build-essential 
+RUN apt install -y wget 
+RUN apt install -y autoconf 
+RUN apt install -y m4 
+RUN apt install -y libtool 
+RUN apt install -y g++ 
+RUN apt install -y cmake 
+RUN apt install -y libgmp-dev 
+RUN apt install -y libssl-dev 
+RUN apt install -y bison 
+RUN apt install -y flex 
+RUN apt install -y unzip 
+RUN apt install -y libglib2.0-dev 
+RUN apt install -y doxygen 
+RUN apt install -y python3-setuptools 
+RUN apt install -y python3-dev 
+RUN apt install -y python3-pip 
+RUN apt install -y nodejs 
+RUN apt install -y npm 
+RUN apt install -y libboost-all-dev=1.71.0.0ubuntu2 
+RUN apt install -y libgtest-dev 
+RUN apt install -y nano 
+RUN apt install -y sudo
         
 RUN sudo ldconfig
 
